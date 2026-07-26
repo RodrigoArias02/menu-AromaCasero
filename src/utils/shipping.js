@@ -102,22 +102,37 @@ export function calcularEnvio(lat, lng) {
 
 // src/utils/messageBuilder.js
 
-export const generarMensajePedido = (cliente, datos, pay, hour, totalCart, listadoProductos ) => {
-  console.log(datos)
+export const generarMensajePedido = (
+  cliente,
+  datos,
+  pay,
+  hour,
+  totalCart,
+  listadoProductos
+) => {
+  return `*🧾 NUEVO PEDIDO*
 
-  return `*Nuevo pedido*
+━━━━━━━━━━━━━━━━━━
+*DATOS DEL CLIENTE*
+━━━━━━━━━━━━━━━━━━
 
-Cliente: ${cliente.nombre}
-Teléfono: ${cliente.telefono}
+👤 ${cliente.nombre}
+📞 ${cliente.telefono}
 
-Dirección: ${datos.street} ${datos.number}
-Localidad: ${datos.locality}
+📍 ${datos.street} ${datos.number}
+🏙️ ${datos.locality}
 
-Productos:
+━━━━━━━━━━━━━━━━━━
+*PRODUCTOS*
+━━━━━━━━━━━━━━━━━━
+
 ${listadoProductos}
 
-Pago: ${pay}
-Horario: ${hour}
+━━━━━━━━━━━━━━━━━━
+💳 *PAGO:* ${pay}
+🕒 *HORARIO:* ${hour}
 
-Total: $${totalCart}`;
+━━━━━━━━━━━━━━━━━━
+💰 *TOTAL: $${totalCart}*
+━━━━━━━━━━━━━━━━━━`;
 };

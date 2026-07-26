@@ -12,10 +12,11 @@ import {
   precioTotalOfertaPorProducto,
 } from "../../utils/products.js";
 
-function ContentModalCart({onSiguientePaso}) {
-  const { clearCart, cart, totalCart, subTotalCart, removeFromCart } = useCart();
+function ContentModalCart({ onSiguientePaso }) {
+  const { clearCart, cart, totalCart, subTotalCart, removeFromCart } =
+    useCart();
   const descuentoTotal = descuentoTotalProductos(cart);
-  
+
   return (
     <aside className="cart-modal">
       <header className="cart-header">
@@ -35,8 +36,8 @@ function ContentModalCart({onSiguientePaso}) {
               <div className="cart-item-info">
                 <header className="cart-item-top">
                   <h3>{product.name}</h3>
-                  <button 
-                    className="delete-btn" 
+                  <button
+                    className="delete-btn"
                     onClick={() => removeFromCart(product.id)}
                     aria-label="Eliminar producto"
                   >
@@ -47,13 +48,27 @@ function ContentModalCart({onSiguientePaso}) {
                 <div className="cart-item-details">
                   <div className="price-kg-selector">
                     <div className="kg-prices">
-                      <p className={enOferta ? "price-original line-through" : "price-original"}>
+                      <p
+                        className={
+                          enOferta
+                            ? "price-original line-through"
+                            : "price-original"
+                        }
+                      >
                         ${product.price} / kg
                       </p>
-                      {enOferta && <p className="price-offer-kg">${precioOfertaPorKg(product)} / kg</p>}
-                      {enOferta && <span className="discount-badge">{porcentajeDescuento(product)}</span>}
+                      {enOferta && (
+                        <p className="price-offer-kg">
+                          ${precioOfertaPorKg(product)} / kg
+                        </p>
+                      )}
+                      {enOferta && (
+                        <span className="discount-badge">
+                          {porcentajeDescuento(product)}
+                        </span>
+                      )}
                     </div>
-                    
+
                     <div className="quantity-selector">
                       <Quantity
                         id={product.id}
@@ -73,7 +88,7 @@ function ContentModalCart({onSiguientePaso}) {
                         <p>${precioNormalPorKg(product)}</p>
                       </div>
                     )}
-                    
+
                     <div className="price-now">
                       {enOferta && <p>Ahora</p>}
                       <h4>${precioTotalOfertaPorProducto(product)}</h4>
@@ -92,9 +107,9 @@ function ContentModalCart({onSiguientePaso}) {
       </section>
 
       <div className="cart-banner-offer">
-
-        
-        <p>  ¡Hacé tu pedido con <strong>2 hs</strong> de anticipación y obtené un <strong>5% de descuento</strong>!
+        <p>
+          ¡Hacé tu pedido con <strong>2 hs</strong> de anticipación y asegurá la
+          disponibilidad de tus productos!
         </p>
       </div>
 
@@ -116,13 +131,13 @@ function ContentModalCart({onSiguientePaso}) {
           <span>${totalCart}</span>
         </div>
 
-        <button className="btn-confirm" onClick={onSiguientePaso}>CONFIRMAR PEDIDO</button>
+        <button className="btn-confirm" onClick={onSiguientePaso}>
+          CONFIRMAR PEDIDO
+        </button>
 
         <button className="btn-clear" onClick={clearCart}>
           <TrashIcon /> VACIAR CARRITO
         </button>
-
-
       </footer>
     </aside>
   );

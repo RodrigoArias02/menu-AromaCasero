@@ -1,6 +1,6 @@
 import "./buttonPay.css";
 
-import { CardIcon, MoneyIcon, BankIcon } from "../../utils/icons";
+import { CardIcon, MoneyIcon, BankIcon } from "../../../utils/icons.jsx";
 
 // 1. Definimos los métodos de pago con sus propiedades(refactorizando)
 const PAYMENT_METHODS = [

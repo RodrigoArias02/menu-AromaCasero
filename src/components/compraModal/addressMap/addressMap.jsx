@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { MapIcon, UbicationIcon, LocationIcon } from "../../utils/icons";
-import MapComponent from "./mapComponent.jsx";
+import { MapIcon, UbicationIcon, LocationIcon } from "../../../utils/icons.jsx";
+import MapComponent from "../mapComponent.jsx";
 import "./addressMap.css";
 
 // 1. Agregamos 'locality' y 'setLocality' a las props

@@ -69,9 +69,20 @@ export function CartProvider({ children }) {
       return total + precioNormalPorKg(product);
     }
   }, 0); // <-- Este 0 es el valor inicial de 'total'
-  const listCart = cart.map((product) => {
-    return `${product.name} x${product.quantity }  `;
-  });
+const listCart = cart.map((product) => {
+  const tieneOferta =
+    product.offer?.kg != null &&
+    product.offer?.price != null;
+
+  const precioUnitario = tieneOferta
+    ? product.offer.price / product.offer.kg
+    : product.price;
+
+  const subtotal =
+    precioUnitario * product.quantity;
+
+  return `${product.name} x${product.quantity} - $${subtotal}`;
+});
 
   return (
     <CartContext.Provider

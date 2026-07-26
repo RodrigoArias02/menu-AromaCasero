@@ -1,7 +1,11 @@
 :root {
-  --color-vino: #470A0E;
+  --color-vino: #4e2633;
 
   --color-fondo: #f5f3f1;
+
+
+
+    --color-vino2: #760313;
 }
 *{
     margin:0;

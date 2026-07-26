@@ -1,0 +1,44 @@
+.conteiner-admin{
+   background: #FDFDFC ; 
+   height: 100%;
+   min-height: 100dvh;
+   font-family: "Inter", sans-serif;
+   overflow: hidden;
+}
+.header-admin{
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    border-bottom: 1px solid rgb(214, 211, 211);
+    margin-bottom: 10px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.1);
+}
+.header-admin h2{
+    font-size: 1.3rem;
+}
+.header-admin p{
+    font-size: 0.85rem;
+}
+.header-admin nav{
+    padding-top: 20px 0;
+}
+.header-admin nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    list-style: none;
+}.header-admin nav ul li{
+    width: 100%;
+}
+.header-admin nav ul li button{
+    background: none;
+    width: 100%;
+    border: 0px;
+    text-transform: uppercase;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: .85rem;
+    color: #460000;
+}
+.header-admin nav ul li .activeAd{
+    border-bottom: 2px solid #460000;
+}

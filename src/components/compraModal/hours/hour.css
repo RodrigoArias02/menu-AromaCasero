@@ -1,0 +1,38 @@
+
+.div-hour{
+    display: flex;
+    flex-direction: column;
+   
+}
+.hours {
+    display: flex;
+    padding: 0px 10px 10px 10px;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    overflow: auto;
+    
+}
+
+.hour {
+    border: 1px solid #D1C7BF;
+  border-radius: 8px;
+  background: white;
+  color: var(--color-vino);
+  padding:10px 12px;
+  font-weight: 400;
+  cursor: pointer;
+  width: min-content;
+  height: min-content;
+    font-family: "Inter", sans-serif;
+}
+
+.hour.active {
+  background:  var(--color-vino);
+  color: white;
+}
+.hour.disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}

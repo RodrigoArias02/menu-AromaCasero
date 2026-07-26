@@ -3,7 +3,7 @@ const ProductDetail = ({ product }) => {
   let priceOfferPerKg;
   let claseLinea="";
   // Hacemos todos los cálculos solo si existe la oferta
-  if (product.offer != null) {
+  if (product.offer.kg != null) {
     priceOfferPerKg = product.offer.price / product.offer.kg;
     discountPercentage = Math.round((1 - priceOfferPerKg / product.price) * 100);
     claseLinea="lineThrough"
@@ -18,7 +18,7 @@ const ProductDetail = ({ product }) => {
 
     
         <section className="price-offer">
-          {product.offer != null && (
+          {product.offer.kg != null && (
             <div>
             <p>Oferta {product.offer.kg}kg</p>
             <span className="price-card">

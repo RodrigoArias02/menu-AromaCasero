@@ -1,0 +1,85 @@
+.admin-login-overlay {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f5f5f5;
+}
+
+.admin-login-modal {
+  width: min(90%, 400px);
+
+  padding: 35px;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+}
+
+.admin-login-modal h2 {
+  margin-bottom: 10px;
+}
+
+.admin-login-modal p {
+  margin-bottom: 25px;
+
+  color: #666;
+}
+
+.admin-login-modal form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.admin-login-modal input {
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+.admin-login-modal input:focus {
+  outline: none;
+
+  border-color: #333;
+}
+
+.admin-login-modal button {
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background-color: #222;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.admin-login-modal button:hover {
+  opacity: 0.85;
+}
+
+.admin-login-error {
+  color: #d32f2f;
+
+  font-size: 14px;
+}

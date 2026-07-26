@@ -2,19 +2,34 @@ import { useState } from "react";
 import "./contentModalCard.css";
 import ProductDetails from "./product-detail.jsx";
 import Quantity from "./quantity.jsx";
-// import CartOutlineIcon from '@iconify-react/ion/cart-outline';
+import { toast } from "sonner";
 import notFound from "../../assets/notFound.png";
 import { useCart } from "../../hooks/useCart.jsx";
 import ButtonIcon from "../buttons/buttonIcon.jsx";
 import { CartIcon, LabelIcon, StarIcon } from "../../utils/icons.jsx";
 const ContentModalCard = ({ product }) => {
-  const ahorro =
-    product.offer != null ? product.offer.price - product.price : "";
   const { addToCart } = useCart();
+
   const [quantity, setQuantity] = useState(1);
+
+  const hasOffer = product.offer?.kg != null;
+  const hasUnitsPerKg = product.unidadesPorKg != null;
+  const hasStock = product.stock > 0;
+
+  const ahorro = hasOffer
+    ? product.offer.price - product.price
+    : null;
+
   const productoAnadir = () => {
+    if (!hasStock) {
+      toast.error("El producto no tiene stock en este momento");
+      return;
+    }
+
     addToCart(product, quantity);
+    toast.success("Producto agregado al carrito");
   };
+
   return (
     <div className="content-modal-card">
       <div className="container-img">
@@ -26,31 +41,45 @@ const ContentModalCard = ({ product }) => {
           }}
         />
       </div>
+
       <h2>{product.name}</h2>
+
       <h3>4 pack - premium blend</h3>
-      <p className="description-card">{product.description}</p>
+
+      <p className="description-card">
+        {product.description}
+      </p>
+
       <ProductDetails product={product} />
-      {product.offer != null && (
-         <span className="label">
-          <LabelIcon/>
+
+      {hasOffer && (
+        <span className="label">
+          <LabelIcon />
+
           <p>
             Ahorras <b>${ahorro}</b> llevando 2kg
           </p>
         </span>
       )}
+
       <Quantity
         initial={1}
         min={1}
-        max={100}
+        max={product.stock}
         claseMargen="quantity-card-modal"
-        onChange={(value) => setQuantity(value)}
+        onChange={setQuantity}
       />
-      {product.unidadesPorKg !== null && (
+
+      {hasUnitsPerKg && (
         <span className="label">
-          <StarIcon/>
-          <p>Cantidad: 1kg ({product.unidadesPorKg} unidades)</p>
+          <StarIcon />
+
+          <p>
+            Cantidad: 1kg ({product.unidadesPorKg} unidades)
+          </p>
         </span>
       )}
+
       <ButtonIcon
         clase="btnAddCart"
         nombre="Agregar al carrito"

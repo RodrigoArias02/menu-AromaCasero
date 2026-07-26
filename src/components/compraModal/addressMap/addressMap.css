@@ -18,19 +18,19 @@
 
 
 .address-search input:focus {
-  border-color: #3C0A0B;
+  border-color: var(--color-vino);
 }
 
 .address-search button {
   padding: 5px 22px;
-  border: 1px solid #3C0A0B;
+  border: 1px solid var(--color-vino);
   border-radius: 5px;
   text-transform: uppercase;
-  color: #3C0A0B;
+  color: var(--color-vino);
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 800;
   transition: .2s;
-  font-size: .8rem;
+  font-size: .78rem;
   font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
@@ -80,17 +80,17 @@
 }
 
 .road-type label:hover {
-  border-color: #8b1e3f;
+  border-color: var(--color-vino);
 }
 
 .road-type label.active {
-  background: #8b1e3f;
+  background: var(--color-vino);
   color: white;
-  border-color: #8b1e3f;
+  border-color: var(--color-vino);
 }
 
 .road-type input {
-  accent-color: #8b1e3f;
+  accent-color: var(--color-vino);
 }
 
 

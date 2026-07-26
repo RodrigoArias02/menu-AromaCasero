@@ -1,0 +1,176 @@
+.container-cards{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    justify-content: center;
+    width: 100%;
+}
+.category-products-admin{
+    width: 100%;
+    display:flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.div-category-span-admin{
+    width: 100%;
+}
+.product-admin-card{
+    background: #FFFFFF;
+    border: 1px solid rgb(214, 211, 211);
+    padding: 15px;
+    border-radius: 9px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: fit-content;
+    max-width: 425px;
+}
+.product-imageAD{
+    max-width: 150px;
+
+    height: 70px;
+}
+.product-imageAD img{
+    width: 100%;
+    height: 100%;
+    min-width: 100px;
+    border-radius: 8px;
+      object-fit: cover;
+      object-position: center;
+}
+.product-infoAD {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 10px;
+    width: 100%;
+    gap: 20px;
+}
+.product-infoAD header{
+  display: flex;
+}
+.product-infoAD header article{
+  margin-left: 10px;
+}
+.product-infoAD header article h3{
+  font-size: 1rem;
+}
+.product-infoAD header article p{
+  font-size: .85rem;
+  max-height: 32px;
+  overflow-y: hidden;
+}
+.product-actionsAD{
+  display: flex;
+ 
+  gap: 10px;
+  
+}
+.product-actionsAD input:nth-child(1){
+    background: #FFFFFF;
+    border: 1px solid rgb(214, 211, 211);
+    color: black;
+    border-radius: 8px;
+}
+.product-statusAD{
+    font-size: .8rem;
+    height: min-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    
+}
+.product-statusAD .color{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:auto;
+    background-color: #460000;
+    border-radius: 50%;
+}
+/*  */
+
+
+/*  */
+.adminQuantity{
+    margin: 0;
+    position: relative;
+    left: -10px;
+
+}
+.product-actionsAD .contentInputs {
+    display: flex;
+    flex-direction: column;
+
+}
+.product-actionsAD .contentInputs .labelAD{
+    font-size: .85rem;
+    font-weight: 600;
+
+}
+
+.product-actionsAD .input-price{
+    display: flex;
+     border: 1px solid rgb(214, 211, 211);
+     border-radius: 8px ;
+     font-size: 1rem;
+     font-weight: 600;
+     width: 100%;
+     max-width: 176px;
+     min-width: 90px;
+     padding: 0px 10px;
+     height: 42px;
+}
+.product-actionsAD .adminQuantity button{
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid rgb(214, 211, 211);
+    color: black;
+}
+.product-actionsAD .adminQuantity button:nth-child(1){
+    border-radius: 8px 0 0 8px;
+   
+}
+.product-actionsAD .adminQuantity .quantity-value{
+    border: 1px solid rgb(214, 211, 211);
+}
+.product-actionsAD .adminQuantity .quantity-value input{
+    border: none;
+      color: black;
+}
+.product-actionsAD .adminQuantity button:nth-child(3){
+    border-radius: 0 8px 8px 0;
+   
+}
+.btn-save{
+  display: flex;
+  margin-left: auto;
+  background: #460000;
+  color: #FFFFFF;
+  
+  padding: 13px 15px;
+  border-radius: 10px;
+  border: none;
+     font-family: "Inter", sans-serif;
+     font-weight: 500;
+     font-size: .6;
+     letter-spacing: .2px;
+     gap: 10px;
+}
+.color.rojo {
+  background: #ef4444;
+}
+
+.color.amarillo {
+  background: #facc15;
+}
+
+.color.verde {
+  background: #22c55e;
+}
