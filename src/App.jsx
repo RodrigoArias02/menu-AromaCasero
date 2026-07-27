@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "./pages/menu.jsx";
-import Admin from "./pages/Admin.jsx";
+import Admin from "./pages/admin.jsx";
 import { useEffect, useState } from "react";
 import { getProducts } from "./service/db.js";
 
