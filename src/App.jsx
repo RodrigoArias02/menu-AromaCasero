@@ -20,12 +20,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/menu-carne"
+          path="/"
           element={<Menu products={products} />}
         />
 
         <Route
-          path="/menu-carne/admin"
+          path="/admin"
           element={<Admin products={products} />}
         />
       </Routes>
