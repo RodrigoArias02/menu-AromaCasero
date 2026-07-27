@@ -36,6 +36,13 @@
     gap: 10px;
     padding: 0 0px 0px 10px;
 }
+.admin-categories ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 10px;
+}
 .admin-categories ul li a{
     background: #F4F3F2;
     border-radius: 16px;
@@ -45,6 +52,6 @@
      text-wrap: nowrap;
      color: black;
      text-decoration: none;
-     font-size: .95rem;
+     font-size: 1.03rem;
 }
 

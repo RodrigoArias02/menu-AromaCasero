@@ -131,7 +131,7 @@ function ContentModalCart({ onSiguientePaso }) {
           <span>${totalCart}</span>
         </div>
 
-        <button className="btn-confirm" onClick={onSiguientePaso}>
+        <button className="btn-confirm" onClick={totalCart==0?"":onSiguientePaso}>
           CONFIRMAR PEDIDO
         </button>
 
