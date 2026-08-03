@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
-const Quantity = ({id, initial, min, max, onChange, claseInput, claseMargen }) => {
+const Quantity = ({id, initial, min, max, onChange, claseInput, claseMargen, unit="kg" }) => {
   const [quantity, setQuantity] = useState(initial);
   const {updateQuantity}=useCart()
 
@@ -26,7 +26,7 @@ const Quantity = ({id, initial, min, max, onChange, claseInput, claseMargen }) =
           readOnly
           className={claseInput}
         />
-        <span>kg</span>
+        <span>{unit}</span>
       </div>
       <button
         type="button" onClick={() => updateQuantitySelector(quantity + 1)}disabled={quantity >= max}>

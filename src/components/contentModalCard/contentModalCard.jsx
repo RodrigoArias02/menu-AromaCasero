@@ -3,7 +3,7 @@ import "./contentModalCard.css";
 import ProductDetails from "./product-detail.jsx";
 import Quantity from "./quantity.jsx";
 import { toast } from "sonner";
-import notFound from "../../assets/notFound.png";
+import notFound from "../../assets/notFoundCard.png";
 import { useCart } from "../../hooks/useCart.jsx";
 import ButtonIcon from "../buttons/buttonIcon.jsx";
 import { CartIcon, LabelIcon, StarIcon } from "../../utils/icons.jsx";
@@ -68,6 +68,7 @@ const ContentModalCard = ({ product }) => {
         max={product.stock}
         claseMargen="quantity-card-modal"
         onChange={setQuantity}
+        unit={product.unit}
       />
 
       {hasUnitsPerKg && (

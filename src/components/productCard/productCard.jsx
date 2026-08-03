@@ -24,16 +24,27 @@ function ProductCard({
   };
 
   return (
-    <article className="product-card" onClick={handleClick}>
-      <article className={`cart-off ${hasOffer ? "" : "none"}`}>
-        <p>
-          <b>•</b> OFERTA <b>•</b>
-        </p>
+    <article 
+      className={`product-card ${noStock ? "out-of-stock" : ""}`} 
+      onClick={handleClick}
+    >
+      {/* Badge de Oferta (se oculta si no hay stock) */}
+      {!noStock && (
+        <article className={`cart-off ${hasOffer ? "" : "none"}`}>
+          <p>
+            <b>•</b> OFERTA <b>•</b>
+          </p>
+          <p>{offer?.kg}kg</p>
+          <p>OFF</p>
+        </article>
+      )}
 
-        <p>{offer?.kg}kg</p>
-
-        <p>OFF</p>
-      </article>
+      {/* Badge de Sin Stock */}
+      {noStock && (
+        <div className="no-stock-badge">
+          SIN STOCK
+        </div>
+      )}
 
       <img
         src={image || notFound}
@@ -65,8 +76,8 @@ function ProductCard({
           )}
         </p>
 
-        <button className="add-btn">
-          AGREGAR (+)
+        <button className="add-btn" disabled={noStock}>
+          {noStock ? "SIN STOCK" : "AGREGAR (+)"}
         </button>
       </div>
     </article>

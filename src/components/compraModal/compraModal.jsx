@@ -17,7 +17,7 @@ function ComprarModal() {
   const [cliente, setCliente] = useState({nombre: "", telefono: "",});
   const [hour, setHour] = useState("19hs"); 
   const { totalCart, listCart } = useCart();
-  const telefono = "5492262339779"; // sin + ni espacios
+  const telefono = "5492262631289"; // sin + ni espacios
   const listadoProductos = listCart.join("\n");
 
   

@@ -11,7 +11,7 @@ import HorarioModal from "../components/horarioModal/horarioModal.jsx";
 import Footer from "../components/footer/footer.jsx";
 import "./menu.css";
 import { useState } from "react";
-import { categoryOrder } from "../utils/products.js";
+import { categoryOrder, estaAbierto } from "../utils/products.js";
 import agruparProductos from "../utils/products.js";
 import { useCart } from "../hooks/useCart.jsx";
 import { Toaster } from "sonner";
@@ -21,8 +21,8 @@ function Menu({ products }) {
   const [modalChildren, setModalChildren] = useState(null);
   const [claseNone, setClaseNone] = useState("");
   const groupedProducts = agruparProductos(products);
+  
   const [titleModal, setTitleModal] = useState("");
-
   const openProductModal = (product) => {
     setTitleModal("");
     setClaseNone("");
@@ -61,6 +61,11 @@ function Menu({ products }) {
 
   return (
     <div className="menu-container">
+      {!estaAbierto() && (
+  <div className="closed-banner">
+    🔴 En este momento nos encontramos cerrados. Horario de atención: todos los días de 7:00 a 21:00.
+  </div>
+)}
       <Toaster position="top-center" richColors closeButton />
       <Modal
         isOpen={isModalOpen}

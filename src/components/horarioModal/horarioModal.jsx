@@ -28,7 +28,7 @@ function HorarioModal() {
 
         <div className="schedule-info">
           <span>Lunes a Viernes</span>
-          <strong>18:00 - 00:00</strong>
+          <strong>7:00 - 21:00</strong>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ function HorarioModal() {
 
         <div className="schedule-info">
           <span>Sábados y Domingos</span>
-          <strong>19:00 - 02:00</strong>
+          <strong>7:00 - 21:00</strong>
         </div>
       </div>
 

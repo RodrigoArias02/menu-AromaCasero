@@ -2,6 +2,8 @@ import "./contentModalCart.css";
 import Quantity from "../contentModalCard/quantity.jsx";
 import { TrashIcon } from "../../utils/icons.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
+import { estaAbierto } from "../../utils/products.js";
+import notFound from "../../assets/notFoundCard.png";
 import {
   condicionOferta,
   precioNormalPorKg,
@@ -30,7 +32,13 @@ function ContentModalCart({ onSiguientePaso }) {
           return (
             <article className="cart-item" key={product.id}>
               <div className="cart-item-img-container">
-                <img src={product.image} alt={product.name} />
+                <img
+                  src={product.image || notFound}
+                  alt={product.name}
+                  onError={(e) => {
+                    e.currentTarget.src = notFound;
+                  }}
+                />
               </div>
 
               <div className="cart-item-info">
@@ -77,6 +85,7 @@ function ContentModalCart({ onSiguientePaso }) {
                         max={100}
                         claseInput="paddingAndWidth"
                         claseMargen="margin-quantity"
+                        unit={product.unit}
                       />
                     </div>
                   </div>
@@ -131,7 +140,11 @@ function ContentModalCart({ onSiguientePaso }) {
           <span>${totalCart}</span>
         </div>
 
-        <button className="btn-confirm" onClick={totalCart==0?"":onSiguientePaso}>
+        <button
+          className="btn-confirm"
+          disabled={totalCart === 0 || !estaAbierto()}
+          onClick={onSiguientePaso}
+        >
           CONFIRMAR PEDIDO
         </button>
 

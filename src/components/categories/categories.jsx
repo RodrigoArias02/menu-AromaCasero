@@ -15,35 +15,12 @@ function Categories() {
       ([entry]) => {
         setHidden(!entry.isIntersecting);
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
 
     if (triggerRef.current) {
       observer.observe(triggerRef.current);
     }
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Detectar la categoría visible
-  useEffect(() => {
-    const sections = document.querySelectorAll(".div-category-span");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setSelected(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "10px 0px -60% 0px",
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
   }, []);

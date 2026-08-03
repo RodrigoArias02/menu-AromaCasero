@@ -6,6 +6,15 @@ import pollo from "../assets/gallina.png";
 import milas from "../assets/milanesas.png";
 
 
+export const estaAbierto = () => {
+  const ahora = new Date();
+  const hora = ahora.getHours();
+  const minutos = ahora.getMinutes();
+
+  const horaDecimal = hora + minutos / 60;
+
+  return horaDecimal >= 7 && horaDecimal < 21;
+};
 export const categoryOrder = {
   milanesas: ["Rebozadas artesanalmente y listas para cocinar."],
   hamburguesas: ["Blends premium con todo el sabor de la carne vacuna."],
@@ -23,15 +32,19 @@ export const categories = [
   { id: "combos", name: "Combos", image: combos },
 ];
 export default function agruparProductos(products) {
-  return products.reduce((acc, product) => {
-    if (!acc[product.category]) {
-      acc[product.category] = [];
+  const agrupados = {};
+
+  categories.forEach(({ id }) => {
+    const productosCategoria = products.filter(
+      (product) => product.category === id
+    );
+
+    if (productosCategoria.length) {
+      agrupados[id] = productosCategoria;
     }
+  });
 
-    acc[product.category].push(product);
-
-    return acc;
-  }, {});
+  return agrupados;
 }
 export const precioOfertaPorKg=(product)=>{
   return  condicionOferta(product) ? product.offer.price / product.offer.kg : "";
