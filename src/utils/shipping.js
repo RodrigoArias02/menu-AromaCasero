@@ -115,17 +115,17 @@ export const generarMensajePedido = (
   totalCart,
   listadoProductos,
 ) => {
-  return `*🧾 NUEVO PEDIDO*
+  return `*NUEVO PEDIDO*
 
 ━━━━━━━━━━━━━━━━━━
 *DATOS DEL CLIENTE*
 ━━━━━━━━━━━━━━━━━━
 
-👤 ${cliente.nombre}
-📞 ${cliente.telefono}
+Nombre: ${cliente.nombre}
+Telefono: ${cliente.telefono}
 
-📍 ${datos.street} ${datos.number}
-🏙️ ${datos.locality}
+Direccion: ${datos.street} ${datos.number}
+Localidad: ${datos.locality}
 
 ━━━━━━━━━━━━━━━━━━
 *PRODUCTOS*
@@ -134,10 +134,10 @@ export const generarMensajePedido = (
 ${listadoProductos}
 
 ━━━━━━━━━━━━━━━━━━
-💳 *PAGO:* ${pay}
-🕒 *HORARIO:* ${hour}
+PAGO: ${pay}
+HORARIO: ${hour}
 
 ━━━━━━━━━━━━━━━━━━
-💰 *TOTAL: $${totalCart}*
+TOTAL: $${totalCart}
 ━━━━━━━━━━━━━━━━━━`;
 };
