@@ -44,7 +44,7 @@ const ContentModalCard = ({ product }) => {
 
       <h2>{product.name}</h2>
 
-      <h3>4 pack - premium blend</h3>
+      <h3>{product.subtitle}</h3>
 
       <p className="description-card">
         {product.description}

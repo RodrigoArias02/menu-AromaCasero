@@ -119,7 +119,7 @@ const handleSave = async () => {
             <Quantity
               
               initial={stock}
-              min={1}
+              min={0}
               max={100}
               claseMargen="adminQuantity"
               onChange={setStock}
