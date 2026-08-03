@@ -71,8 +71,8 @@ export function CartProvider({ children }) {
   }, 0); // <-- Este 0 es el valor inicial de 'total'
 const listCart = cart.map((product) => {
   const tieneOferta =
-    product.offer?.kg != null &&
-    product.offer?.price != null;
+    product.offer.kg?.kg != null &&
+    product.offer.kg?.price != null;
 
   const precioUnitario = tieneOferta
     ? product.offer.price / product.offer.kg
